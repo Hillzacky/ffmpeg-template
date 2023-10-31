@@ -1,0 +1,1 @@
+ffmpeg.exe -i "input.mp4" -c:v libx264 -x264-params "nal-hrd=cbr" -b:v -minrate 4000 -maxrate 5000 -preset superfast -profile:v high --tune zerolatency -vf scale="720x480:flags=lanczos" -framerate 30 -c:a aac -b:a 192k -pix_fmt yuv420p "rtmp://a.rtmp.youtube.com/live2/STREAM_KEY"
